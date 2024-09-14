@@ -119,3 +119,45 @@ footer {
         margin-bottom: 20px;
     }
 }
+
+/* Full-screen background section */
+.welcome-section {
+    height: 100vh;
+    /* Full viewport height */
+    background-image: url('your-background-image.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    /* Make sure the image covers the entire section */
+    background-position: center;
+    /* Center the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* Text color */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Add an overlay to darken the background for better text visibility */
+.welcome-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.5); */
+    background-image: url(img/background.jpg);
+    /* Semi-transparent black overlay */
+    z-index: -1;
+    /* Ensure it is behind the text */
+}
+
+/* Welcome text styles */
+.welcome-section h1 {
+    font-size: 3rem;
+    /* Adjust size as needed */
+    margin: 0;
+}
