@@ -196,4 +196,5 @@ footer {
     border-radius: 20px;
     margin: 50px;
     margin-right: 150px;
+    object-fit: cover;
 }
