@@ -140,24 +140,52 @@ footer {
     z-index: 1;
 }
 
-/* Optional: Add an overlay to darken the background for better text visibility */
-.welcome-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: rgba(0, 0, 0, 0.5); */
-    background-image: url(img/background.jpg);
-    /* Semi-transparent black overlay */
-    z-index: -1;
-    /* Ensure it is behind the text */
-}
 
 /* Welcome text styles */
 .welcome-section h1 {
     font-size: 3rem;
     /* Adjust size as needed */
     margin: 0;
+}
+
+/* .p {
+    background-image: url('example_img_girl.jpg');
+    background-repeat: no-repeat;
+} */
+
+/* Full-screen welcome section with gradient background */
+.welcome-section {
+    height: 100vh;
+    /* Full viewport height */
+    background: linear-gradient(to bottom right, #45a8ff, #b0e7ea);
+    /* Gradient from top left to bottom right */
+    display: flex;
+    /* Flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    color: white;
+    /* Text color */
+    text-align: center;
+    /* Center text */
+    padding: 20px;
+    /* Padding for mobile devices */
+    box-sizing: border-box;
+    /* Include padding in height and width calculations */
+}
+
+/* Welcome text styles */
+.welcome-section h1 {
+    font-size: 3rem;
+    /* Adjust the font size */
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-section h1 {
+        font-size: 2rem;
+        /* Adjust font size for smaller screens */
+    }
 }
