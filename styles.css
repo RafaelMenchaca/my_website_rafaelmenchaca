@@ -157,7 +157,7 @@ footer {
 .welcome-section {
     height: 100vh;
     /* Full viewport height */
-    background: linear-gradient(to bottom right, #45a8ff, #b0e7ea);
+    background: linear-gradient(to bottom right, #323a40, #7a8484);
     /* Gradient from top left to bottom right */
     display: flex;
     /* Flexbox to center content */
@@ -188,4 +188,12 @@ footer {
         font-size: 2rem;
         /* Adjust font size for smaller screens */
     }
+}
+
+.welcome-section img {
+    width: 450px;
+    height: 550px;
+    border-radius: 20px;
+    margin: 50px;
+    margin-right: 150px;
 }
