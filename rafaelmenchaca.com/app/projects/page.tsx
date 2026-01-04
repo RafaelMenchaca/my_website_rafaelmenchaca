@@ -1,4 +1,11 @@
+import Link from "next/link"
+import ProjectCard from "@/components/projects/ProjectCard"
+import { projects } from "@/data/projects"
+
+
 export default function ProjectsPage() {
+  const projectList = Object.entries(projects)
+
   return (
     <main className="px-6 py-24 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold">
@@ -6,47 +13,23 @@ export default function ProjectsPage() {
       </h1>
 
       <p className="mt-4 text-lg text-gray-600">
-        A selection of projects I’ve built to learn,
-        experiment, and solve real problems.
+        A selection of projects focused on backend systems,
+        AI integration, and real-world use cases.
       </p>
 
-      {/* Project list */}
       <section className="mt-12 space-y-6">
-        {/* Educativo IA */}
-        <div className="p-6 border rounded">
-          <h2 className="text-xl font-semibold">
-            Educativo IA
-          </h2>
-
-          <p className="mt-2 text-gray-600">
-            An AI-powered platform that helps teachers
-            generate structured lesson plans efficiently.
-          </p>
-
-          <p className="mt-4 text-sm text-gray-500">
-            Next.js · Supabase · OpenAI API
-          </p>
-
-          <a
-            href="/projects/educativo-ia"
-            className="inline-block mt-4 text-sm underline"
-          >
-            View case study →
-          </a>
-        </div>
-
-        {/* Placeholder project */}
-        <div className="p-6 border rounded opacity-70">
-          <h2 className="text-xl font-semibold">
-            More projects coming soon
-          </h2>
-
-          <p className="mt-2 text-gray-600">
-            I’m continuously building and refining new
-            projects as I learn and grow.
-          </p>
-        </div>
+        {Object.entries(projects).map(([slug, project]) => (
+          <ProjectCard
+            key={slug}
+            slug={slug}
+            title={project.title}
+            description={project.tagline}
+            tech={project.tech}
+            image={project.image} // opcional
+          />
+        ))}
       </section>
+
     </main>
   )
 }

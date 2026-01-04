@@ -1,4 +1,9 @@
 import Image from "next/image"
+import Link from "next/link"
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"
+import ProjectCard from "@/components/projects/ProjectCard"
+
+
 
 
 export default function Home() {
@@ -42,20 +47,54 @@ export default function Home() {
             </a>
           </div>
         </div>
+        
 
-        {/* Avatar */}
-        <div className="flex-shrink-0">
-          <div className="w-40 h-40 rounded-full overflow-hidden border bg-gray-100 flex items-center justify-center text-sm text-gray-500">
+
+        {/* Avatar + Social */}
+        <div className="flex-shrink-0 flex flex-col items-center">
+          {/* Avatar */}
+          <div className="relative w-48 h-48 rounded-full overflow-hidden border bg-gray-100">
             <Image
               src="/images/profile/avatar_v4.jpg"
               alt="Rafael Menchaca"
-              width={160}
-              height={160}
+              fill
               className="object-cover"
               priority
             />
           </div>
+
+          {/* Social links */}
+          <div className="mt-4 flex gap-4 items-center">
+            <a
+              href="https://github.com/RafaelMenchaca"
+              target="_blank"
+              aria-label="GitHub"
+              className="text-gray-600 hover:text-black transition"
+            >
+              <FaGithub size={20} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/rafael-menchaca-058317325/"
+              target="_blank"
+              aria-label="LinkedIn"
+              className="text-gray-600 hover:text-black transition"
+            >
+              <FaLinkedin size={20} />
+            </a>
+
+            <a
+              href="https://x.com/rafael_mench_g"
+              target="_blank"
+              aria-label="X"
+              className="text-gray-600 hover:text-black transition"
+            >
+              <FaXTwitter size={20} />
+            </a>
+          </div>
         </div>
+
+
 
       </section>
 
@@ -66,37 +105,26 @@ export default function Home() {
           Featured Project
         </h2>
 
-        <div className="mt-6 p-6 border rounded">
-          <h3 className="text-xl font-semibold">
-            Educativo IA
-          </h3>
-
-          <p className="mt-2 text-gray-600">
-            An AI-powered platform that helps teachers generate
-            structured lesson plans faster and more efficiently.
-          </p>
-
-          <p className="mt-4 text-sm text-gray-500">
-            Next.js · Supabase · OpenAI API
-          </p>
-
-          <a
-            href="/projects/educativo-ia"
-            className="inline-block mt-4 text-sm underline"
-          >
-            View case study →
-          </a>
+        <div className="mt-6">
+          <ProjectCard
+            slug="educativo-ia"
+            title="Educativo IA"
+            description="An AI-powered platform that helps teachers generate structured lesson plans faster and more efficiently."
+            tech={["Next.js", "Supabase", "OpenAI API"]}
+            image="/images/projects/educativo-ia/preview.png"
+          />
         </div>
       </section>
+
 
       {/* CTA */}
       <section className="px-6 py-16 max-w-4xl mx-auto border-t">
         <h2 className="text-2xl font-semibold">
-          Let’s build something useful
+          Let's build something useful
         </h2>
 
         <p className="mt-2 text-gray-600">
-          I’m interested in frontend, full-stack roles, and
+          I'm interested in frontend, full-stack roles, and
           building products with real users in mind.
         </p>
 

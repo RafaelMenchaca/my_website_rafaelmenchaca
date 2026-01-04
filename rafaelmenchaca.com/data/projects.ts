@@ -16,6 +16,7 @@ export const projects = {
       "OpenAI API",
       "Tailwind CSS",
     ],
+    image: "/images/projects/educativo-ia/preview.png",
     challenges: [
       "Designing a clear multi-step form without overwhelming users",
       "Integrating AI responses into structured educational content",

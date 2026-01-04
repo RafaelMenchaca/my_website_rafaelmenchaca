@@ -1,4 +1,5 @@
 import { projects } from "@/data/projects"
+import Image from "next/image"
 
 export default async function ProjectPage({
   params,
@@ -32,17 +33,18 @@ export default async function ProjectPage({
           {project.overview}
         </p>
         {/* Overview screenshot */}
-        <div className="mt-8 h-64 border rounded flex items-center justify-center text-sm text-gray-500">
-          Dashboard overview (screenshot coming soon)
-          {/* <Image
-            src="/images/projects/educativo-ia/dashboard.png"
-            alt="Educativo IA dashboard"
-            width={800}
-            height={450}
-            className="rounded border"
-          /> */}
-
+        <div className="mt-10">
+          <div className="max-w-3xl mx-auto">
+            <Image
+              src="/images/projects/educativo-ia/laptop.png"
+              alt="Educativo IA dashboard"
+              width={900}
+              height={500}
+              className="rounded-lg border"
+            />
+          </div>
         </div>
+
 
       </section>
 
@@ -67,17 +69,18 @@ export default async function ProjectPage({
           {project.solution}
         </p>
         {/* Solution screenshot */}
-        <div className="mt-8 h-64 border rounded flex items-center justify-center text-sm text-gray-500">
-          Lesson plan generation flow (screenshot coming soon)
-          {/* <Image
-            src="/images/projects/educativo-ia/dashboard.png"
-            alt="Educativo IA dashboard"
-            width={800}
-            height={450}
-            className="rounded border"
-          /> */}
-
+        <div className="mt-10">
+          <div className="max-w-3xl mx-auto">
+            <Image
+              src="/images/projects/educativo-ia/preview.png"
+              alt="Educativo IA dashboard"
+              width={900}
+              height={500}
+              className="rounded-lg border"
+            />
+          </div>
         </div>
+
 
       </section>
 
