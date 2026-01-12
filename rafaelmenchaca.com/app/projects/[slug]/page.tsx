@@ -72,7 +72,7 @@ export default async function ProjectPage({
         <div className="mt-10">
           <div className="max-w-3xl mx-auto">
             <Image
-              src="/images/projects/educativo-ia/preview.png"
+              src="/images/projects/educativo-ia/preview2.png"
               alt="Educativo IA dashboard"
               width={900}
               height={500}

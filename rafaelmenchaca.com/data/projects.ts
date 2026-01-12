@@ -10,13 +10,14 @@ export const projects = {
         "The platform is built around a backend-first approach, combining structured user input, AI-generated content, and persistent storage to deliver consistent and reusable lesson plans.",
 
     tech: [
-      "Next.js",
-      "React",
+      "JavaScript",
+      "Node.js",
       "Supabase",
       "OpenAI API",
       "Tailwind CSS",
+      "HTML",
     ],
-    image: "/images/projects/educativo-ia/preview.png",
+    image: "/images/projects/educativo-ia/preview2.png",
     challenges: [
       "Designing a clear multi-step form without overwhelming users",
       "Integrating AI responses into structured educational content",

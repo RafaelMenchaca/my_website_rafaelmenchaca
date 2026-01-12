@@ -31,14 +31,18 @@ export default function AboutPage() {
       </h2>
 
       <ul className="mt-4 grid grid-cols-2 gap-2 text-gray-600">
+        <li>• Python</li>
+        <li>• JavaScript</li>
         <li>• Node.js</li>
-        <li>• REST APIs</li>
-        <li>• Supabase (PostgreSQL)</li>
-        <li>• OpenAI API</li>
         <li>• Next.js</li>
         <li>• TypeScript</li>
         <li>• Git & GitHub</li>
         <li>• Linux & tooling</li>
+        <li>• Django</li>
+        <li>• Flask</li>
+        <li>• REST APIs</li>
+        <li>• Supabase (PostgreSQL)</li>
+        <li>• OpenAI API</li>
        </ul>
 
       <h2 className="mt-12 text-2xl font-semibold">

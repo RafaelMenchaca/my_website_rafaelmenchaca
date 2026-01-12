@@ -110,8 +110,8 @@ export default function Home() {
             slug="educativo-ia"
             title="Educativo IA"
             description="An AI-powered platform that helps teachers generate structured lesson plans faster and more efficiently."
-            tech={["Next.js", "Supabase", "OpenAI API"]}
-            image="/images/projects/educativo-ia/preview.png"
+            tech={["JavaScript","Node.js", "Supabase", "OpenAI API"]}
+            image="/images/projects/educativo-ia/preview4.png"
           />
         </div>
       </section>
