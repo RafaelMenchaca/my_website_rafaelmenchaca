@@ -36,6 +36,7 @@ export default function AboutPage() {
         <li>• Node.js</li>
         <li>• Next.js</li>
         <li>• TypeScript</li>
+        <li>• Express</li>
         <li>• Git & GitHub</li>
         <li>• Linux & tooling</li>
         <li>• Django</li>
@@ -43,6 +44,8 @@ export default function AboutPage() {
         <li>• REST APIs</li>
         <li>• Supabase (PostgreSQL)</li>
         <li>• OpenAI API</li>
+        <li>• Bootstrap</li>
+        <li>• Tailwind CSS</li>
        </ul>
 
       <h2 className="mt-12 text-2xl font-semibold">

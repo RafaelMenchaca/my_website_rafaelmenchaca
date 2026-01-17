@@ -14,7 +14,7 @@ export const projects = {
       "Node.js",
       "Supabase",
       "OpenAI API",
-      "Tailwind CSS",
+      "Bootstrap",
       "HTML",
     ],
     image: "/images/projects/educativo-ia/preview2.png",
