@@ -7,6 +7,10 @@ type ProjectCardProps = {
   description: string
   tech: string[]
   image?: string
+  links?: {
+    demo?: string
+    github?: string
+  }
 }
 
 export default function ProjectCard({
@@ -15,17 +19,13 @@ export default function ProjectCard({
   description,
   tech,
   image,
+  links,
 }: ProjectCardProps) {
   return (
-    <div className="p-6 border rounded">
-      {/* Title */}
-      <h3 className="text-xl font-semibold">
-        {title}
-      </h3>
+    <article className="p-6 border rounded">
+      <h3 className="text-xl font-semibold">{title}</h3>
 
-      {/* Content */}
       <div className="mt-4 flex flex-col md:flex-row gap-6 items-start">
-        {/* Image (optional) */}
         {image && (
           <div className="relative w-full md:w-48 h-32 rounded-md overflow-hidden border bg-gray-100 flex-shrink-0">
             <Image
@@ -33,28 +33,48 @@ export default function ProjectCard({
               alt={`${title} preview`}
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 192px"
             />
           </div>
         )}
 
-        {/* Text + Button */}
-        <div>
-          <p className="text-gray-600">
-            {description}
-          </p>
+        <div className="w-full">
+          <p className="text-gray-600">{description}</p>
 
-          <p className="mt-3 text-sm text-gray-500">
-            {tech.join(" · ")}
-          </p>
+          <p className="mt-3 text-sm text-gray-500">{tech.join(", ")}</p>
 
-          <Link
-            href={`/projects/${slug}`}
-            className="inline-block mt-4 px-3 py-1.5 text-xs border rounded-md hover:bg-gray-50 transition"
-          >
-            View case study
-          </Link>
+          <div className="mt-4 flex w-full flex-wrap justify-start gap-3">
+            {links?.demo && (
+              <a
+                href={links.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block px-3 py-1.5 text-xs rounded-md bg-black text-white"
+              >
+                Live Demo
+              </a>
+            )}
+
+            {links?.github && (
+              <a
+                href={links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block px-3 py-1.5 text-xs border rounded-md hover:bg-gray-50 transition"
+              >
+                GitHub Repo
+              </a>
+            )}
+
+            <Link
+              href={`/projects/${slug}`}
+              className="inline-block px-3 py-1.5 text-xs border rounded-md hover:bg-gray-50 transition"
+            >
+              View case study
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 }

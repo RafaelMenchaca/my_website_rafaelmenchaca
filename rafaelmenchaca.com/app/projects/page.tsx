@@ -1,35 +1,38 @@
-import Link from "next/link"
+import type { Metadata } from "next"
+import type { Project, ProjectSlug } from "@/data/projects"
 import ProjectCard from "@/components/projects/ProjectCard"
 import { projects } from "@/data/projects"
 
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Selected projects by Rafael Menchaca focused on backend systems and AI integration.",
+}
 
 export default function ProjectsPage() {
-  const projectList = Object.entries(projects)
+  const projectEntries = Object.entries(projects) as Array<[ProjectSlug, Project]>
 
   return (
     <main className="px-6 py-24 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold">
-        Projects
-      </h1>
+      <h1 className="text-3xl font-bold">Projects</h1>
 
       <p className="mt-4 text-lg text-gray-600">
-        A selection of projects focused on backend systems,
-        AI integration, and real-world use cases.
+        A selection of projects focused on backend systems, AI integration, and
+        real-world use cases.
       </p>
 
       <section className="mt-12 space-y-6">
-        {Object.entries(projects).map(([slug, project]) => (
+        {projectEntries.map(([slug, project]) => (
           <ProjectCard
             key={slug}
             slug={slug}
             title={project.title}
             description={project.tagline}
             tech={project.tech}
-            image={project.image} // opcional
+            image={project.image}
+            links={project.links}
           />
         ))}
       </section>
-
     </main>
   )
 }
