@@ -21,7 +21,7 @@ export default function Footer() {
           {pathname === "/" ? (
             <button
               onClick={handleHomeClick}
-              className="hover:opacity-80 transition cursor-pointer"
+              className="icon-interactive hover:opacity-80 cursor-pointer"
             >
               <Image
                 src="/images/brand/logo_3.png"
@@ -32,7 +32,7 @@ export default function Footer() {
               />
             </button>
           ) : (
-            <Link href="/" className="hover:opacity-80 transition cursor-pointer">
+            <Link href="/" className="icon-interactive hover:opacity-80 cursor-pointer">
               <Image
                 src="/images/brand/logo_3.png"
                 alt="Rafael Menchaca"
@@ -44,7 +44,7 @@ export default function Footer() {
           )}
 
           <p className="text-sm text-gray-500 mt-1">
-            Rafael Menchaca &middot; Backend-focused developer
+            Rafael Menchaca &middot; Software developer
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="flex gap-5 items-center">
             <Link
               href="/contact"
-              className="inline-block px-3 py-1.5 text-xs border rounded-md hover:bg-gray-50 transition"
+              className="button-interactive button-secondary inline-block px-3 py-1.5 text-xs border rounded-md"
             >
               Get in touch
             </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="text-gray-500 hover:text-black transition"
+              className="icon-interactive text-gray-500 hover:text-gray-900"
             >
               <FaGithub size={18} />
             </a>
@@ -72,7 +72,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="text-gray-500 hover:text-black transition"
+              className="icon-interactive text-gray-500 hover:text-[#0A66C2]"
             >
               <FaLinkedin size={18} />
             </a>
@@ -82,7 +82,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="X"
-              className="text-gray-500 hover:text-black transition"
+              className="icon-interactive text-gray-500 hover:text-black"
             >
               <FaXTwitter size={18} />
             </a>

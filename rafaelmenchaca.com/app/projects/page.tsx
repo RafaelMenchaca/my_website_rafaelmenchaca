@@ -5,7 +5,7 @@ import { projects } from "@/data/projects"
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected projects by Rafael Menchaca focused on backend systems and AI integration.",
+  description: "Selected projects by Rafael Menchaca focused on software systems and AI integration.",
 }
 
 export default function ProjectsPage() {
@@ -13,14 +13,14 @@ export default function ProjectsPage() {
 
   return (
     <main className="px-6 py-24 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold">Projects</h1>
+      <h1 className="page-reveal text-3xl font-bold">Projects</h1>
 
-      <p className="mt-4 text-lg text-gray-600">
-        A selection of projects focused on backend systems, AI integration, and
+      <p className="page-reveal page-reveal-delay-1 mt-4 text-lg text-gray-600">
+        A selection of projects focused on software systems, AI integration, and
         real-world use cases.
       </p>
 
-      <section className="mt-12 space-y-6">
+      <section className="page-reveal page-reveal-delay-2 mt-12 space-y-6">
         {projectEntries.map(([slug, project]) => (
           <ProjectCard
             key={slug}

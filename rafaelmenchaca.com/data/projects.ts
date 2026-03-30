@@ -28,7 +28,7 @@ export const projects = {
     problem:
       "Day-to-day business operations often become fragmented across manual processes or disconnected tools, making it harder to track cash movement, keep inventory accurate, and process sales reliably as the system grows.",
     solution:
-      "The system is structured around clear business modules for cash, sales, and inventory, with a backend designed to keep operations consistent across the full workflow. This approach supports cleaner domain boundaries, better maintainability, and a foundation that can scale with additional operational features.",
+      "The system is structured around clear business modules for cash, sales, and inventory, with an application architecture designed to keep operations consistent across the full workflow. This approach supports cleaner domain boundaries, better maintainability, and a foundation that can scale with additional operational features.",
     tech: [
       "Next.js (App Router)",
       "React",
@@ -50,7 +50,7 @@ export const projects = {
       "Designing the system so new business features can be added without coupling the core modules",
     ],
     learnings: [
-      "Stronger understanding of modular backend design for business-critical workflows",
+      "Stronger understanding of modular software design for business-critical workflows",
       "Better handling of transactional consistency across interconnected domains",
       "More discipline around designing full-stack systems with scalability in mind from the start",
     ],
@@ -62,11 +62,11 @@ export const projects = {
     title: "Educativo IA",
     tagline: "AI-powered lesson planning platform",
     overview:
-      "Educativo IA is a backend-driven web platform focused on AI-powered content generation, data persistence, and structured educational workflows.",
+      "Educativo IA is a software platform focused on AI-powered content generation, data persistence, and structured educational workflows.",
     problem:
       "Teachers often spend hours manually creating lesson plans, repeating similar structures and formats, which reduces the time available for teaching and student engagement.",
     solution:
-      "The platform is built around a backend-first approach, combining structured user input, AI-generated content, and persistent storage to deliver consistent and reusable lesson plans.",
+      "The platform is built around a software-first approach, combining structured user input, AI-generated content, and persistent storage to deliver consistent and reusable lesson plans.",
     tech: [
       "JavaScript",
       "Node.js",

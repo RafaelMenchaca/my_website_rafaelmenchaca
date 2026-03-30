@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
+import TechList from "@/components/tech/TechList"
 import type { Project, ProjectSlug } from "@/data/projects"
 import { projects } from "@/data/projects"
 
@@ -43,7 +44,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <main className="px-6 py-24 max-w-4xl mx-auto space-y-16">
-      <section>
+      <section className="page-reveal">
         <h1 className="text-4xl font-bold">{project.title}</h1>
 
         <p className="mt-2 text-xl text-gray-600">{project.tagline}</p>
@@ -65,13 +66,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         )}
       </section>
 
-      <section>
+      <section className="page-reveal page-reveal-delay-1">
         <h2 className="text-2xl font-semibold">The Problem</h2>
 
         <p className="mt-4 text-gray-600">{project.problem}</p>
       </section>
 
-      <section>
+      <section className="page-reveal page-reveal-delay-1">
         <h2 className="text-2xl font-semibold">The Solution</h2>
 
         <p className="mt-4 text-gray-600">{project.solution}</p>
@@ -91,17 +92,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         )}
       </section>
 
-      <section>
+      <section className="page-reveal page-reveal-delay-2">
         <h2 className="text-2xl font-semibold">Tech Stack & Architecture</h2>
 
-        <ul className="mt-4 grid grid-cols-2 gap-2 pl-4 text-gray-600 list-disc">
-          {project.tech.map((tech) => (
-            <li key={tech}>{tech}</li>
-          ))}
-        </ul>
+        <TechList items={project.tech} layout="grid" className="mt-4" />
       </section>
 
-      <section>
+      <section className="page-reveal page-reveal-delay-2">
         <h2 className="text-2xl font-semibold">Challenges</h2>
 
         <ul className="mt-4 list-disc list-inside text-gray-600">
@@ -111,7 +108,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </ul>
       </section>
 
-      <section>
+      <section className="page-reveal page-reveal-delay-3">
         <h2 className="text-2xl font-semibold">Key Learnings</h2>
 
         <ul className="mt-4 list-disc list-inside text-gray-600">
@@ -122,7 +119,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {hasLinks && (
-        <section>
+        <section className="page-reveal page-reveal-delay-3">
           <h2 className="text-2xl font-semibold">Links</h2>
 
           <div className="mt-4 flex gap-4">
@@ -131,7 +128,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 href={project.links.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2 rounded bg-black text-white text-sm"
+                className="button-interactive button-primary px-5 py-2 rounded bg-black text-white text-sm"
               >
                 Live Demo
               </a>
@@ -142,7 +139,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 href={project.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2 rounded border text-sm"
+                className="button-interactive button-secondary px-5 py-2 rounded border text-sm"
               >
                 GitHub Repo
               </a>

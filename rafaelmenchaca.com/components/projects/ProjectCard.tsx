@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import TechList from "@/components/tech/TechList"
 
 type ProjectCardProps = {
   slug: string
@@ -41,7 +42,7 @@ export default function ProjectCard({
         <div className="w-full">
           <p className="text-gray-600">{description}</p>
 
-          <p className="mt-3 text-sm text-gray-500">{tech.join(", ")}</p>
+          <TechList items={tech} tone="chip" className="mt-4" />
 
           <div className="mt-4 flex w-full flex-wrap justify-start gap-3">
             {links?.demo && (
@@ -49,7 +50,7 @@ export default function ProjectCard({
                 href={links.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block px-3 py-1.5 text-xs rounded-md bg-black text-white"
+                className="button-interactive button-primary inline-block px-3 py-1.5 text-xs rounded-md bg-black text-white"
               >
                 Live Demo
               </a>
@@ -60,7 +61,7 @@ export default function ProjectCard({
                 href={links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block px-3 py-1.5 text-xs border rounded-md hover:bg-gray-50 transition"
+                className="button-interactive button-secondary inline-block px-3 py-1.5 text-xs border rounded-md"
               >
                 GitHub Repo
               </a>
@@ -68,7 +69,7 @@ export default function ProjectCard({
 
             <Link
               href={`/projects/${slug}`}
-              className="inline-block px-3 py-1.5 text-xs border rounded-md hover:bg-gray-50 transition"
+              className="button-interactive button-secondary inline-block px-3 py-1.5 text-xs border rounded-md"
             >
               View case study
             </Link>
