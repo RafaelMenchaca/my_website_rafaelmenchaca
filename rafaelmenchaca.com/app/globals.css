@@ -19,3 +19,147 @@ body {
 html {
   color-scheme: light;
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-reveal {
+  opacity: 0;
+  animation: fade-up 0.7s ease forwards;
+}
+
+.page-reveal-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.page-reveal-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.page-reveal-delay-3 {
+  animation-delay: 0.24s;
+}
+
+.button-interactive {
+  transition:
+    transform 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.button-interactive:hover,
+.button-interactive:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px -18px rgba(17, 24, 39, 0.75);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: #111827;
+  color: #ffffff;
+  box-shadow: 0 14px 26px -18px rgba(17, 24, 39, 0.9);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: #f3f4f6;
+  border-color: #6b7280;
+  color: #111827;
+}
+
+.icon-interactive {
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.icon-interactive:hover,
+.icon-interactive:focus-visible {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.nav-link-interactive {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #4b5563;
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.nav-link-interactive:hover,
+.nav-link-interactive:focus-visible {
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.nav-link-interactive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-link-interactive:hover::after,
+.nav-link-interactive:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.tech-chip {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.tech-chip:hover,
+.tech-chip:focus-visible {
+  transform: translateY(-1px);
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-reveal {
+    opacity: 1;
+    animation: none;
+  }
+
+  .button-interactive,
+  .icon-interactive,
+  .nav-link-interactive,
+  .nav-link-interactive::after,
+  .tech-chip {
+    transition: none;
+  }
+
+  .button-interactive:hover,
+  .button-interactive:focus-visible,
+  .icon-interactive:hover,
+  .icon-interactive:focus-visible,
+  .nav-link-interactive:hover,
+  .nav-link-interactive:focus-visible,
+  .tech-chip:hover,
+  .tech-chip:focus-visible {
+    transform: none;
+  }
+}
