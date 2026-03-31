@@ -11,7 +11,20 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at top left, rgba(229, 231, 235, 0.95), transparent 24rem),
+    radial-gradient(circle at top right, rgba(226, 232, 240, 0.8), transparent 26rem),
+    radial-gradient(circle at 35% 4rem, rgba(255, 255, 255, 0.82), transparent 18rem),
+    linear-gradient(
+      180deg,
+      #eef2f5 0%,
+      #f4f6f7 12%,
+      #fafbfb 24%,
+      var(--background) 40%,
+      var(--background) 100%
+    );
+  background-repeat: no-repeat;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -106,6 +119,10 @@ html {
   transform: translateY(-1px);
 }
 
+.nav-link-active {
+  color: #111827;
+}
+
 .nav-link-interactive::after {
   content: "";
   position: absolute;
@@ -121,6 +138,10 @@ html {
 
 .nav-link-interactive:hover::after,
 .nav-link-interactive:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-link-active::after {
   transform: scaleX(1);
 }
 

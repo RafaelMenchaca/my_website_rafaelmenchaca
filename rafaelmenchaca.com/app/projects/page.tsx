@@ -20,13 +20,14 @@ export default function ProjectsPage() {
         real-world use cases.
       </p>
 
-      <section className="page-reveal page-reveal-delay-2 mt-12 space-y-6">
+      <section className="page-reveal page-reveal-delay-2 mt-12 space-y-8">
         {projectEntries.map(([slug, project]) => (
           <ProjectCard
             key={slug}
             slug={slug}
             title={project.title}
-            description={project.tagline}
+            tagline={project.tagline}
+            summary={project.cardSummary}
             tech={project.tech}
             image={project.image}
             links={project.links}
