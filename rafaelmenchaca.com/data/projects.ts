@@ -1,6 +1,7 @@
 export type Project = {
   title: string
   tagline: string
+  cardSummary: string
   overview: string
   problem: string
   solution: string
@@ -23,6 +24,8 @@ export const projects = {
   "punto-de-venta": {
     title: "Punto de Venta",
     tagline: "Full-stack POS system for sales, cash, and inventory workflows",
+    cardSummary:
+      "Small businesses often end up managing sales, inventory, and cash flow across disconnected processes. This project brings those operations into one modular system designed for reliability, clearer workflows, and room to grow.",
     overview:
       "Punto de Venta is a full-stack point-of-sale system designed to manage daily business operations such as cash handling, sales processing, and inventory control. It uses a modular architecture that separates core business domains while preserving transactional consistency and room to scale.",
     problem:
@@ -61,6 +64,8 @@ export const projects = {
   "educativo-ia": {
     title: "Educativo IA",
     tagline: "AI-powered lesson planning platform",
+    cardSummary:
+      "Teachers can lose too much time repeating the same lesson-plan structure by hand. Educativo IA turns structured input into reusable AI-assisted planning with saved results and a faster content workflow.",
     overview:
       "Educativo IA is a software platform focused on AI-powered content generation, data persistence, and structured educational workflows.",
     problem:
@@ -72,7 +77,7 @@ export const projects = {
       "Node.js",
       "Supabase",
       "OpenAI API",
-      "Bootstrap",
+      "Tailwind CSS",
       "HTML",
     ],
     image: "/images/projects/educativo-ia/preview2.png",
