@@ -1,24 +1,28 @@
 import type { Metadata } from "next"
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import ContactForm from "@/components/contact/ContactForm"
+import { getCopy } from "@/lib/i18n"
+import { getCurrentLocale } from "@/lib/get-current-locale"
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact Rafael Menchaca for software, AI, and product collaboration.",
 }
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const locale = await getCurrentLocale()
+  const siteCopy = getCopy(locale)
+
   return (
     <main className="px-6 py-24 max-w-3xl mx-auto">
-      <h1 className="page-reveal text-3xl font-bold">Get in touch</h1>
+      <h1 className="page-reveal text-3xl font-bold">{siteCopy.contact.title}</h1>
 
       <p className="page-reveal page-reveal-delay-1 mt-4 text-lg text-gray-600">
-        I&apos;m open to conversations about software products, AI-powered
-        applications, and potential collaboration.
+        {siteCopy.contact.intro}
       </p>
 
       <p className="page-reveal page-reveal-delay-2 mt-4 text-gray-600">
-        The easiest way to reach me is via email:
+        {siteCopy.contact.emailLead}
       </p>
 
       <p className="page-reveal page-reveal-delay-2 mt-2">
@@ -62,11 +66,10 @@ export default function ContactPage() {
         </a>
       </div>
 
-      <ContactForm />
+      <ContactForm copy={siteCopy.contact.form} />
 
       <p className="page-reveal page-reveal-delay-3 mt-12 text-sm text-gray-500">
-        Currently focused on building and improving my portfolio and software
-        development expertise.
+        {siteCopy.contact.footerNote}
       </p>
     </main>
   )

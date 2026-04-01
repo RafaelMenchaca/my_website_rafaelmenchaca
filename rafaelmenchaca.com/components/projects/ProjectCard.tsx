@@ -13,6 +13,11 @@ type ProjectCardProps = {
     demo?: string
     github?: string
   }
+  labels: {
+    liveDemo: string
+    githubRepo: string
+    viewCaseStudy: string
+  }
 }
 
 export default function ProjectCard({
@@ -23,6 +28,7 @@ export default function ProjectCard({
   tech,
   image,
   links,
+  labels,
 }: ProjectCardProps) {
   return (
     <article className="rounded-[28px] border border-gray-200/80 bg-white px-5 py-5 shadow-[0_20px_45px_-38px_rgba(15,23,42,0.45)] md:px-6">
@@ -64,7 +70,7 @@ export default function ProjectCard({
                 rel="noreferrer"
                 className="button-interactive button-primary inline-block px-3 py-1.5 text-xs rounded-md bg-black text-white"
               >
-                Live Demo
+                {labels.liveDemo}
               </a>
             )}
 
@@ -75,7 +81,7 @@ export default function ProjectCard({
                 rel="noreferrer"
                 className="button-interactive button-secondary inline-block px-3 py-1.5 text-xs border rounded-md"
               >
-                GitHub Repo
+                {labels.githubRepo}
               </a>
             )}
 
@@ -83,7 +89,7 @@ export default function ProjectCard({
               href={`/projects/${slug}`}
               className="button-interactive button-secondary inline-block px-3 py-1.5 text-xs border rounded-md"
             >
-              View case study
+              {labels.viewCaseStudy}
             </Link>
           </div>
         </div>

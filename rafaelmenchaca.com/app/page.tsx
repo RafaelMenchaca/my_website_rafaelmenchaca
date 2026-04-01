@@ -3,9 +3,13 @@ import Link from "next/link"
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 import ProjectCard from "@/components/projects/ProjectCard"
 import type { Project, ProjectSlug } from "@/data/projects"
-import { projects } from "@/data/projects"
+import { getProjectContent, projects } from "@/data/projects"
+import { getCopy } from "@/lib/i18n"
+import { getCurrentLocale } from "@/lib/get-current-locale"
 
-export default function Home() {
+export default async function Home() {
+  const locale = await getCurrentLocale()
+  const siteCopy = getCopy(locale)
   const featuredProjects = (Object.entries(projects) as Array<[ProjectSlug, Project]>).filter(
     ([, project]) => project.featured,
   )
@@ -15,18 +19,16 @@ export default function Home() {
       <section className="relative px-6 pt-16 pb-18 max-w-4xl mx-auto">
         <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between">
           <div className="flex-1 max-w-2xl">
-            <h1 className="page-reveal whitespace-nowrap text-4xl font-bold leading-tight tracking-tight text-gray-900">
-              Software Developer
+            <h1 className="page-reveal max-w-full text-balance text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl md:whitespace-nowrap">
+              {siteCopy.home.heroTitle}
             </h1>
 
             <p className="page-reveal page-reveal-delay-1 mt-5 max-w-2xl text-xl leading-8 text-gray-800">
-              Building AI-powered web applications with solid architecture and
-              real-world use cases.
+              {siteCopy.home.heroLead}
             </p>
 
             <p className="page-reveal page-reveal-delay-2 mt-3 max-w-2xl text-sm leading-7 text-gray-500 md:text-base">
-              I focus on software architecture, data flow, and AI integration,
-              using frontend as a delivery layer for well-structured systems.
+              {siteCopy.home.heroBody}
             </p>
 
             <div className="page-reveal page-reveal-delay-3 mt-8 flex gap-4">
@@ -34,23 +36,23 @@ export default function Home() {
                 href="/projects"
                 className="button-interactive button-primary rounded-xl bg-black px-5 py-2.5 text-sm text-white"
               >
-                View Projects
+                {siteCopy.home.primaryCta}
               </Link>
 
               <Link
                 href="/about"
                 className="button-interactive button-secondary rounded-xl border px-5 py-2.5 text-sm"
               >
-                About Me
+                {siteCopy.home.secondaryCta}
               </Link>
             </div>
           </div>
 
           <div className="page-reveal page-reveal-delay-3 flex w-full max-w-[15rem] flex-col items-center self-center text-center">
             <div className="relative">
-              <div className="absolute inset-3 rounded-full bg-gray-300/55 blur-2xl" />
+              <div className="hero-portrait-glow absolute inset-3 rounded-full blur-2xl" />
 
-              <div className="relative rounded-full bg-[linear-gradient(145deg,rgba(226,232,240,0.95),rgba(203,213,225,0.98))] p-[6px] shadow-[0_24px_50px_-30px_rgba(15,23,42,0.34)]">
+              <div className="hero-portrait-frame relative rounded-full p-[6px] shadow-[0_24px_50px_-30px_rgba(15,23,42,0.34)]">
                 <div className="relative h-44 w-44 overflow-hidden rounded-full border border-slate-200/80 bg-gray-100 md:h-48 md:w-48">
                   <Image
                     src="/images/profile/avatar_v4.jpg"
@@ -106,43 +108,47 @@ export default function Home() {
       <section className="page-reveal px-6 py-16 max-w-4xl mx-auto border-t border-gray-200/80">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gray-400">
-            Selected Work
+            {siteCopy.home.selectedWork}
           </p>
 
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-gray-900">
-            Featured Projects
+            {siteCopy.home.featuredProjects}
           </h2>
         </div>
 
         <div className="mt-7 space-y-8">
-          {featuredProjects.map(([slug, project]) => (
-            <ProjectCard
-              key={slug}
-              slug={slug}
-              title={project.title}
-              tagline={project.tagline}
-              summary={project.cardSummary}
-              tech={project.tech}
-              image={project.image}
-              links={project.links}
-            />
-          ))}
+          {featuredProjects.map(([slug, project]) => {
+            const projectContent = getProjectContent(project, locale)
+
+            return (
+              <ProjectCard
+                key={slug}
+                slug={slug}
+                title={projectContent.title}
+                tagline={projectContent.tagline}
+                summary={projectContent.cardSummary}
+                tech={project.tech}
+                image={project.image}
+                links={project.links}
+                labels={siteCopy.projects.card}
+              />
+            )
+          })}
         </div>
       </section>
 
       <section className="page-reveal page-reveal-delay-1 px-6 py-16 max-w-4xl mx-auto border-t border-gray-200/80">
-        <h2 className="text-2xl font-semibold">Let&apos;s build something useful</h2>
+        <h2 className="text-2xl font-semibold">{siteCopy.home.buildTitle}</h2>
 
         <p className="mt-2 text-gray-600">
-          I&apos;m interested in frontend, full-stack roles, and building products
-          with real users in mind.
+          {siteCopy.home.buildBody}
         </p>
 
         <Link
           href="/contact"
           className="button-interactive button-primary inline-block mt-6 px-5 py-2 rounded bg-black text-white text-sm"
         >
-          Get in touch
+          {siteCopy.home.buildCta}
         </Link>
       </section>
     </main>

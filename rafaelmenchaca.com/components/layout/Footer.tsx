@@ -5,7 +5,14 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 
-export default function Footer() {
+type FooterProps = {
+  labels: {
+    role: string
+    cta: string
+  }
+}
+
+export default function Footer({ labels }: FooterProps) {
   const pathname = usePathname()
 
   const handleHomeClick = () => {
@@ -44,7 +51,7 @@ export default function Footer() {
           )}
 
           <p className="mt-1 text-sm text-gray-600">
-            Rafael Menchaca &middot; Software Developer
+            Rafael Menchaca &middot; {labels.role}
           </p>
         </div>
 
@@ -54,7 +61,7 @@ export default function Footer() {
               href="/contact"
               className="button-interactive button-secondary inline-block px-3 py-1.5 text-xs border rounded-md"
             >
-              Get in touch
+              {labels.cta}
             </Link>
 
             <a
