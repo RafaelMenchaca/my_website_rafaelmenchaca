@@ -1,12 +1,16 @@
 import type { Metadata } from "next"
 import TechList from "@/components/tech/TechList"
+import { getCopy } from "@/lib/i18n"
+import { getCurrentLocale } from "@/lib/get-current-locale"
 
 export const metadata: Metadata = {
   title: "About",
   description: "About Rafael Menchaca and the technologies he works with.",
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const locale = await getCurrentLocale()
+  const siteCopy = getCopy(locale)
   const technologies = [
     "Python",
     "JavaScript",
@@ -27,28 +31,22 @@ export default function AboutPage() {
 
   return (
     <main className="px-6 py-24 max-w-4xl mx-auto">
-      <h1 className="page-reveal text-3xl font-bold">About Me</h1>
+      <h1 className="page-reveal text-3xl font-bold">{siteCopy.about.title}</h1>
 
       <p className="page-reveal page-reveal-delay-1 mt-6 text-lg text-gray-600">
-        I&apos;m a software developer interested in building reliable systems and
-        implementing AI in practical, real-world applications.
+        {siteCopy.about.intro}
       </p>
 
       <p className="page-reveal page-reveal-delay-2 mt-4 text-gray-600">
-        While I work across the stack, my main focus is on software
-        architecture, data modeling, API design, and AI-powered workflows.
-        Frontend is a tool for delivering well-structured systems, not the end
-        goal.
+        {siteCopy.about.focus}
       </p>
 
-      <p className="page-reveal page-reveal-delay-3 mt-4 text-gray-600">
-        I&apos;m currently developing <strong>Educativo IA</strong>, an AI-powered
-        educational platform. This project has allowed me to work on software
-        architecture, authentication, database design, and AI integration using
-        modern tools.
-      </p>
+      <p
+        className="page-reveal page-reveal-delay-3 mt-4 text-gray-600"
+        dangerouslySetInnerHTML={{ __html: siteCopy.about.educativo }}
+      />
 
-      <h2 className="page-reveal mt-12 text-2xl font-semibold">What I work with</h2>
+      <h2 className="page-reveal mt-12 text-2xl font-semibold">{siteCopy.about.workWith}</h2>
 
       <TechList
         items={technologies}
@@ -57,19 +55,15 @@ export default function AboutPage() {
       />
 
       <h2 className="page-reveal mt-12 text-2xl font-semibold">
-        How I think as a developer
+        {siteCopy.about.thinkingTitle}
       </h2>
 
       <p className="page-reveal page-reveal-delay-1 mt-4 text-gray-600">
-        I care about writing code that is readable, maintainable, and easy to
-        reason about. I prefer simple solutions that solve real problems instead
-        of overengineering.
+        {siteCopy.about.thinkingBodyOne}
       </p>
 
       <p className="page-reveal page-reveal-delay-2 mt-4 text-gray-600">
-        I&apos;m continuously learning and improving by building projects,
-        refactoring my own work, and understanding how real-world applications
-        are structured.
+        {siteCopy.about.thinkingBodyTwo}
       </p>
     </main>
   )
