@@ -147,8 +147,8 @@ export default function TechList({
 
   const badgeClassName =
     tone === "chip"
-      ? "tech-chip inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600"
-      : "inline-flex items-center gap-2 text-gray-600"
+      ? "tech-chip inline-flex cursor-default items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600 select-none"
+      : "inline-flex cursor-default items-center gap-2 text-gray-600"
 
   const iconSize = tone === "chip" ? 14 : 16
 

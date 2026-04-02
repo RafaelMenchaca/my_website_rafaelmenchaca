@@ -32,7 +32,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <article className="rounded-[28px] border border-gray-200/80 bg-white px-5 py-5 shadow-[0_20px_45px_-38px_rgba(15,23,42,0.45)] md:px-6">
-      <h3 className="text-lg font-semibold tracking-tight text-gray-900 md:text-xl">
+      <h3 className="text-lg font-normal tracking-tight text-gray-900 md:text-xl">
         {title}
       </h3>
 
@@ -54,7 +54,7 @@ export default function ProjectCard({
         </div>
 
         <div className="min-w-0 flex flex-1 flex-col">
-          <p className="text-sm font-medium text-gray-500">{tagline}</p>
+          <p className="text-sm font-semibold text-gray-500">{tagline}</p>
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-gray-600">
             {summary}
