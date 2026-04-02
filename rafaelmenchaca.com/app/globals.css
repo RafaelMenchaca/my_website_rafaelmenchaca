@@ -236,17 +236,12 @@ html {
 }
 
 .tech-chip {
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+  transition: none;
 }
 
 .tech-chip:hover,
 .tech-chip:focus-visible {
-  transform: translateY(-1px);
-  border-color: #d1d5db;
-  background: #f9fafb;
+  transform: none;
 }
 
 .theme-toggle {
@@ -276,9 +271,10 @@ html {
 }
 
 .locale-toggle-flag {
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  font-size: 1rem;
-  line-height: 1;
+  display: block;
+  height: 1.1rem;
+  width: 1.1rem;
+  flex-shrink: 0;
 }
 
 .theme-auto-indicator {
@@ -434,12 +430,6 @@ html[data-theme="dark"] .tech-chip {
   border-color: var(--border-strong);
   background: var(--surface-elevated);
   color: var(--text-muted);
-}
-
-html[data-theme="dark"] .tech-chip:hover,
-html[data-theme="dark"] .tech-chip:focus-visible {
-  border-color: rgba(148, 163, 184, 0.36);
-  background: rgba(30, 41, 59, 0.84);
 }
 
 html[data-theme="dark"] .hero-portrait-frame {
